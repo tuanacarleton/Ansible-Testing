@@ -11,10 +11,10 @@
           description: Created by Ansible Test
           enabled: true
 
-          
+
     - name: Add IP Addredd to Loopback66
       cisco.ios.ios_l3_interfaces:
         config:
-        - name: GigabitEthernet0/1
+        - name: Loopback66
           ipv4:
           - address: 192.168.66.66/32
