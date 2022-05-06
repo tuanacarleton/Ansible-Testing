@@ -1,0 +1,10 @@
+---
+- name: remove interface test
+  hosts: routers
+  become: yes
+
+  tasks:
+    - name: Remove Loopback66
+      ios_interface:
+        name: Loopback66
+        state: absent
