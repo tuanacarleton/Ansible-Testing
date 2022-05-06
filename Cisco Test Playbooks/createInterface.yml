@@ -1,0 +1,11 @@
+---
+- hosts: routers
+  become: yes
+
+  tasks:
+    - name: Create Loopback66
+  cisco.ios.ios_interfaces:
+    config:
+    - name: Loopback66
+      description: Created by Ansible Test
+      enabled: true
