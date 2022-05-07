@@ -1,0 +1,11 @@
+---
+routers:
+  - hostname: Router1
+    lo1ip: 192.168.66.66 255.255.255.255
+
+  - hostname: Router2
+    lo1ip: 192.168.66.67 255.255.255.255
+
+  - hostname: Router3
+    lo1ip: 192.168.66.68 255.255.255.255
+
