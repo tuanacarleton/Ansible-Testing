@@ -1,0 +1,3 @@
+templates/switch_template.j2
+templates/vlan_template.j2
+templates/routes_template.j2

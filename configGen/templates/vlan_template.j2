@@ -1,0 +1,17 @@
+!
+{%- for vlan in vlans %}
+vlan {{ vlan.id }}
+  name {{ vlan.name }}
+  {%- if vlan.address %}
+!
+interface Vlan{{vlan.id}}
+  ip address {{ vlan.address }}
+    {%- if vlan.helper %}
+        {%- for h in vlan.helper %}
+  ip helper-address {{ h }}
+        {%- endfor %}
+    {%- endif %}
+  no shutdown
+  {%- endif %}
+!
+{%- endfor %}

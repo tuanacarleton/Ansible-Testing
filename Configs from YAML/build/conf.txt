@@ -1,0 +1,50 @@
+!
+hostname switch1.test
+!
+ntp server 1.2.3.4 source gi1/0/1
+!!
+vlan 1
+  name default
+!
+interface Vlan1
+  ip address 10.77.1.68 255.255.255.0
+  ip helper-address 10.10.10.1
+  ip helper-address 10.10.10.2
+  no shutdown
+!
+vlan 2
+  name vlan_2
+!
+interface Vlan2
+  ip address 10.77.2.68 255.255.255.0
+  ip helper-address 10.10.10.1
+  ip helper-address 10.10.10.2
+  ip helper-address 10.10.10.3
+  no shutdown
+!
+vlan 3
+  name vlan_3
+!
+vlan 4
+  name vlan_4
+!
+interface Vlan4
+  ip address 10.77.4.68 255.255.255.0
+  ip helper-address 10.10.10.1
+  ip helper-address 10.10.10.2
+  no shutdown
+!
+vlan 5
+  name vlan_5
+!
+vlan 6
+  name vlan_6
+!
+interface Vlan6
+  ip address 10.77.1.68 255.255.255.0
+  ip helper-address 10.10.10.1
+  ip helper-address 10.10.10.2
+  no shutdown
+!!
+ip route 1.1.1.1 255.255.255.0 2.2.2.2
+ip route 3.3.3.3 255.255.255.0 4.4.4.4
